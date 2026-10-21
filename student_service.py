@@ -31,6 +31,10 @@ class StudentService:
                             department = student_payload.department)
         return self.repository.create_student(db,student)
 
+    def delete_student_by_roll(self, db: Session, roll: str):
+            self.repository.delete_student_by_roll(db,roll)
+            return "Deleted Successfully"
+
     def get_all_students(self, db: Session):
         return self.repository.get_all(db=db)
 
